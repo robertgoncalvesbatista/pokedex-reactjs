@@ -32,8 +32,6 @@ const Dashboard = () => {
         setNextUrl(response.data.next);
 
         getPokemon(response.data.results);
-
-        setLoading(false);
     };
 
     const getPokemon = (response: []) => {
@@ -47,6 +45,8 @@ const Dashboard = () => {
                 return state;
             });
         });
+
+        setLoading(false);
     };
 
     useEffect(() => {
@@ -57,22 +57,27 @@ const Dashboard = () => {
         <Container>
             <List>
                 <NavBar>
-                    <Button
-                        onClick={() => {
-                            setPokeData([]);
-                            setUrl(prevUrl);
-                        }}
-                    >
-                        Anterior
-                    </Button>
-                    <Button
-                        onClick={() => {
-                            setPokeData([]);
-                            setUrl(nextUrl);
-                        }}
-                    >
-                        Próximo
-                    </Button>
+                    {prevUrl && (
+                        <Button
+                            onClick={() => {
+                                setPokeData([]);
+                                setUrl(prevUrl);
+                            }}
+                        >
+                            Anterior
+                        </Button>
+                    )}
+
+                    {nextUrl && (
+                        <Button
+                            onClick={() => {
+                                setPokeData([]);
+                                setUrl(nextUrl);
+                            }}
+                        >
+                            Próximo
+                        </Button>
+                    )}
                 </NavBar>
 
                 <Wrapper>
