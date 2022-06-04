@@ -1,10 +1,12 @@
+import { Fragment } from "react";
+
 import { CardStyled, ImageStyled } from "./styles";
 
 import { ICard, IPokemon } from "../../types";
 
-export function Card(props: ICard) {
+const Card = (props: ICard) => {
     return (
-        <>
+        <Fragment>
             {props.loading ? (
                 <h1>Loading...</h1>
             ) : (
@@ -23,6 +25,8 @@ export function Card(props: ICard) {
                     );
                 })
             )}
-        </>
+        </Fragment>
     );
-}
+};
+
+export default Card;

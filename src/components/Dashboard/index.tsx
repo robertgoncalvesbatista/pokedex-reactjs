@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Card } from "../Card";
+import Card from "../Card";
 
 import {
     Container,
@@ -89,4 +89,4 @@ const Dashboard = () => {
     );
 };
 
-export { Dashboard };
+export default Dashboard;
