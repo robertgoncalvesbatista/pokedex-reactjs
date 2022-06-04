@@ -33,6 +33,16 @@ const Link = styled("a", {
     },
 });
 
+const Button = styled("button", {
+    background: "#0077b6",
+    color: "#f8f9fa",
+    padding: "0.5rem 1rem",
+    borderRadius: "6px",
+    "&:hover": {
+        background: "#00b4d8",
+    },
+});
+
 const List = styled("div", {
     margin: "0 2rem",
 });
@@ -56,4 +66,14 @@ const Status = styled("div", {
     margin: "4rem",
 });
 
-export { Container, Wrapper, NavBar, Link, Frame, Display, Status, List };
+export {
+    Container,
+    Wrapper,
+    NavBar,
+    Link,
+    Button,
+    Frame,
+    Display,
+    Status,
+    List,
+};
