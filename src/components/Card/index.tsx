@@ -1,31 +1,16 @@
-import { Fragment } from "react";
-
 import { CardStyled, ImageStyled } from "./styles";
 
-import { ICard, IPokemon } from "../../types";
+import { IPokemon } from "../../types";
 
-const Card = (props: ICard) => {
+const Card = (props: {pokemon: IPokemon}) => {
     return (
-        <Fragment>
-            {props.loading ? (
-                <h1>Loading...</h1>
-            ) : (
-                props.pokemon.map((item: IPokemon, index) => {
-                    return (
-                        <CardStyled key={index}>
-                            <span>#{item.id}</span>
+        <CardStyled>
+            <span>#{props.pokemon.id}</span>
 
-                            <ImageStyled
-                                src={item.sprites.front_default}
-                                alt="Imagem de um Pokémon"
-                            />
+            <ImageStyled  src={props.pokemon.sprites.front_default} alt="Imagem de um Pokémon" />
 
-                            <span>{item.name}</span>
-                        </CardStyled>
-                    );
-                })
-            )}
-        </Fragment>
+            <span>{props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.slice(1)}</span>
+        </CardStyled>
     );
 };
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Card from "../Card";
+import Info from "../Info";
 
 import {
     Container,
@@ -9,17 +10,18 @@ import {
     NavBar,
     Button,
     Frame,
-    Display,
-    Status,
     List,
 } from "./styles";
 
-import { IState, IPokemons } from "../../types";
+import { IPokemon, IPokemons } from "../../types";
 
 const Dashboard = () => {
-    const [pokeData, setPokeData] = useState<IState>([]);
-    const [loading, setLoading] = useState(true);
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
+
+    const [pokedata, setPokedata] = useState<IPokemon[]>([]);
+    const [pokedex, setPokedex] = useState<IPokemon>();
+
+    const [loading, setLoading] = useState(true);
     const [nextUrl, setNextUrl] = useState("");
     const [prevUrl, setPrevUrl] = useState("");
 
@@ -32,22 +34,22 @@ const Dashboard = () => {
         setNextUrl(response.data.next);
 
         getPokemon(response.data.results);
-    };
+    }
 
     const getPokemon = (response: []) => {
         response.map(async (pokemon: IPokemons) => {
             const result = await axios.get(pokemon.url);
 
-            setPokeData((state) => {
-                state = [...state, result.data];
-                state.sort((a, b) => (a.id > b.id ? 1 : -1));
+            setPokedata((state) => {
+                state = [...state, result.data],
+                    state.sort((a, b) => (a.id > b.id ? 1 : -1));
 
                 return state;
             });
         });
 
         setLoading(false);
-    };
+    }
 
     useEffect(() => {
         pokeFunc();
@@ -60,7 +62,7 @@ const Dashboard = () => {
                     {prevUrl && (
                         <Button
                             onClick={() => {
-                                setPokeData([]);
+                                setPokedata([]);
                                 setUrl(prevUrl);
                             }}
                         >
@@ -71,7 +73,7 @@ const Dashboard = () => {
                     {nextUrl && (
                         <Button
                             onClick={() => {
-                                setPokeData([]);
+                                setPokedata([]);
                                 setUrl(nextUrl);
                             }}
                         >
@@ -81,17 +83,27 @@ const Dashboard = () => {
                 </NavBar>
 
                 <Wrapper>
-                    <Card pokemon={pokeData} loading={loading} />
+                    {loading ? (
+                        <h1>Loading...</h1>
+                    ) : (
+                        pokedata.map((value: IPokemon, index) => {
+                            return (
+                                <div onClick={() => {
+                                    setPokedex(value)
+                                }}>
+                                    <Card key={index} pokemon={value} />
+                                </div>
+                            )
+                        })
+                    )}
                 </Wrapper>
             </List>
 
             <Frame>
-                <Display>Hello Wolrd</Display>
-
-                <Status>Hello Wolrd</Status>
+                <Info pokemon={pokedex} />
             </Frame>
         </Container>
     );
-};
+}
 
 export default Dashboard;

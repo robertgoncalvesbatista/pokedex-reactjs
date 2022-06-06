@@ -43,16 +43,7 @@ const Frame = styled("div", {
     margin: " 4rem 2rem",
     borderRadius: "6px",
     boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    color: "#000000"
 });
 
-const Display = styled("div", {
-    padding: "1rem",
-    margin: "4rem",
-});
-
-const Status = styled("div", {
-    padding: "1rem",
-    margin: "4rem",
-});
-
-export { Container, Wrapper, NavBar, Button, Frame, Display, Status, List };
+export { Container, Wrapper, NavBar, Button, Frame, List };

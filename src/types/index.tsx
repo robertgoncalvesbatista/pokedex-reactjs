@@ -1,6 +1,7 @@
 export type ICard = {
     pokemon: IPokemon[];
     loading: boolean;
+    info: string;
 };
 
 export type IPokemons = {
@@ -9,12 +10,6 @@ export type IPokemons = {
 };
 
 export type IPokemon = {
-    id: string;
-    sprites: { front_default: string };
-    name: string;
-};
-
-export type IState = {
     id: string;
     name: string;
     base_experience: string;
@@ -291,4 +286,4 @@ export type IState = {
             ];
         }
     ];
-}[];
+};
