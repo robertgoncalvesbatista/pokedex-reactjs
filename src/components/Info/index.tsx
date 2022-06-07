@@ -5,31 +5,31 @@ import { IPokemon } from "../../types";
 import {
     Display,
     Status,
+    Abilities,
+    Ability
 } from "./styles";
 
 const Info = (props: { pokemon: IPokemon | undefined }) => {
     return (
         <Fragment>
             <Display>
-                <h2>{props.pokemon?.name}</h2>
-                <img src={props.pokemon?.sprites.versions["generation-iv"].platinum.front_default} alt="Pokemon" />
+                <h2>{props.pokemon?.name.charAt(0).toUpperCase()}{props.pokemon?.name.slice(1)}</h2>
+                <img src={props.pokemon?.sprites.other.dream_world.front_default} style={{ height: "200px", margin: "1rem 0" }} />
 
-                <div>
+                <Abilities>
                     {props.pokemon?.abilities.map(value => {
                         return (
-                            <div>
-                                <h3>{value.ability.name}</h3>
-                            </div>
+                            <Ability>{value.ability.name.charAt(0).toUpperCase()}{value.ability.name.slice(1)}</Ability>
                         )
                     })}
-                </div>
+                </Abilities>
             </Display>
 
             <Status>
                 {props.pokemon?.stats.map(value => {
                     return (
                         <div>
-                            <h3>{value.stat.name}: {value.base_stat}</h3>
+                            <span><b>{value.stat.name.toUpperCase()}</b>: {value.base_stat}</span>
                         </div>
                     )
                 })}
