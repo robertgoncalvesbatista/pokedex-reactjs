@@ -11,6 +11,7 @@ import {
     Button,
     Frame,
     List,
+    CardWrapper,
 } from "./styles";
 
 import { IPokemon, IPokemons } from "../../types";
@@ -57,51 +58,47 @@ const Dashboard = () => {
 
     return (
         <Container>
-            <List>
-                <NavBar>
-                    {prevUrl && (
-                        <Button
-                            onClick={() => {
-                                setPokedata([]);
-                                setUrl(prevUrl);
-                            }}
-                        >
-                            Anterior
-                        </Button>
-                    )}
+            <NavBar>
+                {prevUrl && (
+                    <Button
+                        onClick={() => {
+                            setPokedata([]);
+                            setUrl(prevUrl);
+                        }}
+                    >
+                        Anterior
+                    </Button>
+                )}
 
-                    {nextUrl && (
-                        <Button
-                            onClick={() => {
-                                setPokedata([]);
-                                setUrl(nextUrl);
-                            }}
-                        >
-                            Próximo
-                        </Button>
-                    )}
-                </NavBar>
-
-                <Wrapper>
-                    {loading ? (
-                        <h1>Loading...</h1>
-                    ) : (
-                        pokedata.map((value: IPokemon, index) => {
-                            return (
-                                <div onClick={() => {
-                                    setPokedex(value)
-                                }}>
-                                    <Card key={index} pokemon={value} />
-                                </div>
-                            )
-                        })
-                    )}
-                </Wrapper>
-            </List>
+                {nextUrl && (
+                    <Button
+                        onClick={() => {
+                            setPokedata([]);
+                            setUrl(nextUrl);
+                        }}
+                    >
+                        Próximo
+                    </Button>
+                )}
+            </NavBar>
 
             <Frame>
                 <Info pokemon={pokedex} />
             </Frame>
+
+            <Wrapper>
+                {loading ? (
+                    <h1>Loading...</h1>
+                ) : (
+                    pokedata.map((value: IPokemon, index) => {
+                        return (
+                            <CardWrapper onClick={() => setPokedex(value)}>
+                                <Card key={index} pokemon={value} />
+                            </CardWrapper>
+                        )
+                    })
+                )}
+            </Wrapper>
         </Container>
     );
 }

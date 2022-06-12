@@ -1,20 +1,36 @@
 import { styled } from "@stitches/react";
 
 const CardStyled = styled("div", {
-    padding: "0.25rem 1rem",
-    fontSize: "14px",
+    width: "100px",
+    padding: "0.5rem",
+
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    background: "#0096c7",
-    margin: "0.8rem",
-    borderRadius: "6px",
-    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    justifyContent: "center",
+
+    boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 8px",
+    borderRadius: "4px",
+
+    "&:hover": {
+        background: "var(--color-white-secondary)",
+    },
 });
 
 const ImageStyled = styled("img", {
-    width: "54px",
-    height: "54px",
-    margin: "0 1rem",
+    background: "var(--color-black-terciary)",
+    marginBottom: "0.5rem",
+    width: "100%",
+    height: "100%",
 });
 
-export { CardStyled, ImageStyled };
+const InfoStyled = styled("div", {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+
+    justifyContent: "space-around",
+    color: "var(--color-black-primary)",
+});
+
+export { CardStyled, ImageStyled, InfoStyled };

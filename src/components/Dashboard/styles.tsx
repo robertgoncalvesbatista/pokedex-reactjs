@@ -1,32 +1,39 @@
 import { styled } from "@stitches/react";
 
 const Container = styled("div", {
-    display: "flex",
+    display: "grid",
+    justifyContent: "center",
+    alignItems: "center",
     padding: "0 8rem",
 });
 
 const Wrapper = styled("div", {
-    display: "grid",
-    gridTemplateColumns: "auto auto",
+    display: "flex",
+    overflow: "scroll",
+    padding: "0 1rem",
 });
 
 const NavBar = styled("div", {
-    display: "flex",
+    margin: "1rem 0 2rem",
     padding: "0.5rem 1rem",
+
+    display: "flex",
     alignItems: "center",
     justifyContent: "space-evenly",
-    background: "#f8f9fa",
-    color: "#343a40",
-    margin: "1rem 0",
+
+    background: "var(--color-white-primary)",
+
     borderRadius: "6px",
-    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    boxShadow: "rgba(0, 0, 0, 0.15) 0px 2px 8px",
 });
 
 const Button = styled("button", {
     background: "#0077b6",
-    color: "#f8f9fa",
+    color: "var(--color-white-primary)",
+
     padding: "0.5rem 1rem",
     borderRadius: "6px",
+
     "&:hover": {
         background: "#00b4d8",
     },
@@ -37,13 +44,18 @@ const List = styled("div", {
 });
 
 const Frame = styled("div", {
-    background: "#f8f9fa",
-    padding: "1rem",
-    width: "100%",
-    margin: " 4rem 2rem",
-    borderRadius: "6px",
-    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-    color: "#000000"
+    background: "var(--color-red-secondary)",
+    color: "var(--color-black-primary)",
+    display: "flex",
+
+    marginBottom: "2rem",
+
+    width: "1256px",
+    borderRadius: "1rem",
+    boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
 });
 
-export { Container, Wrapper, NavBar, Button, Frame, List };
+const CardWrapper = styled("div", {
+})
+
+export { Container, Wrapper, NavBar, Button, Frame, List, CardWrapper };

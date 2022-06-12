@@ -3,21 +3,24 @@
 :root {
     --color-white-primary: #f8f9fa;
     --color-white-secondary: #e9ecef;
-    --color-white-terciary: #dee2e6;
+    --color-white-terciary: #dedede;
 
-    --color-black-primary: #212529;
-    --color-black-secondary: #343a40;
-    --color-black-terciary: #495057;
+    --color-black-primary: #232323;
+    --color-black-secondary: #212529;
+    --color-black-terciary: #343a40;
 
-    --color-blue-primary: #0077b6;
-    --color-blue-primary: #0096c7;
-    --color-blue-primary: #00b4d8;
+    --color-blue-primary: #19699e;
+    --color-blue-secondary: #0096c7;
+    --color-blue-terciary: #28aafe;
 
-    --color-bege: #e9c46a;
+    --color-red-primary: #8b0519;
+    --color-red-secondary: #dc0a2d;
+    --color-red-terciary: #ff173e;
+
+    --color-green: #52ae5f;
+    --color-yellow: #ffc300;
 }
 
 body {
-    background-color: #f07167;
-    color: #f8f9fa;
     font-family: "Poppins", sans-serif;
 }
