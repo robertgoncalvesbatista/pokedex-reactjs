@@ -4,15 +4,8 @@ import axios from "axios";
 import Card from "../Card";
 import Info from "../Info";
 
-import {
-    Container,
-    Wrapper,
-    NavBar,
-    Button,
-    Frame,
-    List,
-    CardWrapper,
-} from "./styles";
+import { FlexBox } from "../../styles";
+import { Wrapper, NavBar, Button } from "./styles";
 
 import { IPokemon, IPokemons } from "../../types";
 
@@ -57,34 +50,22 @@ const Dashboard = () => {
     }, [url]);
 
     return (
-        <Container>
+        <FlexBox display="flex" alignment="center" css={{ flexDirection: "column" }}>
             <NavBar>
                 {prevUrl && (
-                    <Button
-                        onClick={() => {
-                            setPokedata([]);
-                            setUrl(prevUrl);
-                        }}
-                    >
+                    <Button onClick={() => { setPokedata([]); setUrl(prevUrl); }}>
                         Anterior
                     </Button>
                 )}
 
                 {nextUrl && (
-                    <Button
-                        onClick={() => {
-                            setPokedata([]);
-                            setUrl(nextUrl);
-                        }}
-                    >
+                    <Button onClick={() => { setPokedata([]); setUrl(nextUrl); }}>
                         Próximo
                     </Button>
                 )}
             </NavBar>
 
-            <Frame>
-                <Info pokemon={pokedex} />
-            </Frame>
+            <Info pokemon={pokedex} />
 
             <Wrapper>
                 {loading ? (
@@ -92,14 +73,14 @@ const Dashboard = () => {
                 ) : (
                     pokedata.map((value: IPokemon, index) => {
                         return (
-                            <CardWrapper onClick={() => setPokedex(value)}>
+                            <div onClick={() => setPokedex(value)}>
                                 <Card key={index} pokemon={value} />
-                            </CardWrapper>
+                            </div>
                         )
                     })
                 )}
             </Wrapper>
-        </Container>
+        </FlexBox>
     );
 }
 

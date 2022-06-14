@@ -1,16 +1,22 @@
 import { styled } from "@stitches/react";
 
-const Container = styled("div", {
-    display: "grid",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "0 8rem",
-});
-
 const Wrapper = styled("div", {
+    width: "1200px",
     display: "flex",
     overflow: "scroll",
     padding: "0 1rem",
+    overflowY: "hidden",
+    "&::-webkit-scrollbar": {
+        width: "16px",
+    },
+    "&::-webkit-scrollbar-track": {
+        background: "var(--color-white-primary)",
+        borderRadius: "10px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "var(--color-red-primary)",
+        borderRadius: "10px",
+    },
 });
 
 const NavBar = styled("div", {
@@ -39,23 +45,6 @@ const Button = styled("button", {
     },
 });
 
-const List = styled("div", {
-    margin: "0 2rem",
-});
 
-const Frame = styled("div", {
-    background: "var(--color-red-secondary)",
-    color: "var(--color-black-primary)",
-    display: "flex",
 
-    marginBottom: "2rem",
-
-    width: "1256px",
-    borderRadius: "1rem",
-    boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
-});
-
-const CardWrapper = styled("div", {
-})
-
-export { Container, Wrapper, NavBar, Button, Frame, List, CardWrapper };
+export { Wrapper, NavBar, Button };
