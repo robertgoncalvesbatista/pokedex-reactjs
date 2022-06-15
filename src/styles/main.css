@@ -18,10 +18,20 @@
     --color-red-terciary: #8b0519;
 
     --color-green-primary: #52ae5f;
-    --color-green-secondary: #428a4c;
+    --color-green-secondary: #336a3f;
+    --color-green-terciary: #00312c;
 
     --color-yellow-primary: #ffc300;
     --color-yellow-secondary: #d8a604;
+
+
+    --color-one: #52ae5f;
+    --color-two: #232323;
+    --color-three: #00312c;
+    --color-four: #860c23;
+    --color-five: #dedede;
+    --color-six: #dc0a2d;
+    --color-seven: #28aafe;
 }
 
 body {

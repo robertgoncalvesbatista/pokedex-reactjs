@@ -13,33 +13,42 @@ const ScreenStyled = styled("figure", {
     height: "200px",
     borderRadius: "4px 4px 4px 45px",
     background: "var(--color-black-secondary)",
-    border: "3rem solid var(--color-white-primary)",
+    border: "2rem solid var(--color-white-terciary)",
 })
 
 const Cross = styled("div", {
     position: "relative",
-    borderRadius: "4px",
-    border: "2px solid var(--color-black-primary)",
-    background: "var(--color-black-secondary)",
-    width: "20px",
-    height: "60px",
+    background: "var(--color-green-terciary)",
+
+    width: "27px",
+    height: "71px",
+
     margin: "0 1.3rem",
+
+    border: "2px solid #00000044",
+    borderRadius: "4px",
+    boxShadow: "1px 1px 2px 2px #000000",
     "&::before": {
         content: '',
         position: "absolute",
-        borderRadius: "4px",
-        background: "var(--color-black-secondary)",
-        width: "60px",
-        height: "20px",
+        background: "var(--color-green-terciary)",
+
+        width: "71px",
+        height: "25px",
+
         top: "20px",
-        left: "-22px",
-        border: "2px solid #ffffff44",
+        left: "-24px",
+
+        border: "2px solid #00000044",
+        borderRadius: "4px",
+        boxShadow: "1px 1px 2px 2px #000000",
     }
 })
 
 const ScreenGreen = styled("div", {
-    width: "160px",
-    padding: "0.5rem 1rem",
+    width: "130px",
+    height: "35px",
+    padding: "0.5rem",
     background: "var(--color-green-primary)",
     color: "var(--color-white-primary)",
     border: "2px solid var(--color-green-secondary)",
@@ -53,7 +62,7 @@ const Frame = styled("div", {
     marginBottom: "2rem",
 
     borderRadius: "1rem",
-    boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
+    boxShadow: "#d10023cc 6px 6px 2px, #343a40 5px 5px 20px 5px",
 });
 
 export { TypeStyled, ScreenStyled, Cross, ScreenGreen, Frame };

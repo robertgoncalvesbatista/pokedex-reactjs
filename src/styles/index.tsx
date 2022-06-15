@@ -4,13 +4,17 @@ const Polygon = styled("div", {
     content: "",
     variants: {
         color: {
+            branco: {
+                background: "var(--color-white-terciary)",
+                border: "2px solid var(--color-black-secondary)"
+            },
             cinza: {
                 background: "var(--color-black-secondary)",
-                border: "2px solid var(--color-black-primary)"
+                border: "2px solid #00000044"
             },
             blueLight: {
                 background: "var(--color-blue-primary)",
-                border: "2px solid var(--color-white-primary)"
+                border: "6px solid var(--color-white-primary)"
             },
             blueMarine: {
                 background: "var(--color-blue-primary)",
@@ -19,6 +23,10 @@ const Polygon = styled("div", {
             verde: {
                 background: "var(--color-green-primary)",
                 border: "2px solid var(--color-green-secondary)"
+            },
+            verdeEscuro: {
+                background: "var(--color-green-terciary)",
+                border: "2px solid #00000044"
             },
             vermelho: {
                 background: "var(--color-red-primary)",
