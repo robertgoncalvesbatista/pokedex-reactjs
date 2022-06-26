@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+
+import { request } from "../../services/api";
 
 import Card from "../Card";
 import Info from "../Info";
@@ -22,7 +23,7 @@ const Dashboard = () => {
     const pokeFunc = async () => {
         setLoading(true);
 
-        const response = await axios.get(url);
+        const response = await request({ url: url });
 
         setPrevUrl(response.data.previous);
         setNextUrl(response.data.next);
@@ -32,7 +33,7 @@ const Dashboard = () => {
 
     const getPokemon = (response: []) => {
         response.map(async (pokemon: IPokemons) => {
-            const result = await axios.get(pokemon.url);
+            const result = await request({ url: pokemon.url });
 
             setPokedata((state) => {
                 state = [...state, result.data],

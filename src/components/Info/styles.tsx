@@ -55,14 +55,10 @@ const ScreenGreen = styled("div", {
 })
 
 const Frame = styled("div", {
-    background: "var(--color-red-secondary)",
     color: "var(--color-black-primary)",
     display: "flex",
-
+    alignItems: "flex-end",
     marginBottom: "2rem",
-
-    borderRadius: "1rem",
-    boxShadow: "#d10023cc 6px 6px 2px, #343a40 5px 5px 20px 5px",
 });
 
 export { TypeStyled, ScreenStyled, Cross, ScreenGreen, Frame };
