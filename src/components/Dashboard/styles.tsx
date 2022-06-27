@@ -2,30 +2,20 @@ import { styled } from "@stitches/react";
 
 const Wrapper = styled("div", {
     width: "1200px",
-    display: "flex",
-    overflow: "scroll",
+    display: "grid",
+    gridTemplateColumns: "auto auto auto auto auto auto auto auto",
     padding: "0 1rem",
-    overflowY: "hidden",
-    "&::-webkit-scrollbar": {
-        width: "16px",
-    },
-    "&::-webkit-scrollbar-track": {
-        background: "var(--color-white-primary)",
-        borderRadius: "10px",
-    },
-    "&::-webkit-scrollbar-thumb": {
-        backgroundColor: "var(--color-red-primary)",
-        borderRadius: "10px",
-    },
 });
 
 const NavBar = styled("div", {
-    margin: "1rem 0 2rem",
-    padding: "0.5rem 1rem",
+    margin: "1rem auto",
+    padding: "1rem 4rem",
 
-    display: "flex",
+    display: "grid",
+    gridTemplateColumns: "1fr 2fr 1fr",
+
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyItems: "center",
 
     background: "var(--color-white-primary)",
 

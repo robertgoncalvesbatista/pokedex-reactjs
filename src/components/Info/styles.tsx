@@ -1,13 +1,5 @@
 import { styled } from "@stitches/react";
 
-const TypeStyled = styled("div", {
-    color: "#ffffff",
-    textAlign: "center",
-    background: "#ef7c09",
-    padding: "0.5rem 1rem",
-    borderRadius: "4px",
-})
-
 const ScreenStyled = styled("figure", {
     width: "250px",
     height: "200px",
@@ -61,4 +53,4 @@ const Frame = styled("div", {
     marginBottom: "2rem",
 });
 
-export { TypeStyled, ScreenStyled, Cross, ScreenGreen, Frame };
+export { ScreenStyled, Cross, ScreenGreen, Frame };

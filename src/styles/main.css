@@ -24,7 +24,6 @@
     --color-yellow-primary: #ffc300;
     --color-yellow-secondary: #d8a604;
 
-
     --color-one: #52ae5f;
     --color-two: #232323;
     --color-three: #00312c;
@@ -36,5 +35,15 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: #2a9d8f;
+    background: linear-gradient(45deg, #05668d, #00a896);
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-red-secondary);
 }

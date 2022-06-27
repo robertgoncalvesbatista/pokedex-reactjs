@@ -53,17 +53,19 @@ const Dashboard = () => {
     return (
         <FlexBox display="flex" alignment="center" css={{ flexDirection: "column" }}>
             <NavBar>
-                {prevUrl && (
+                {prevUrl ? (
                     <Button onClick={() => { setPokedata([]); setUrl(prevUrl); }}>
                         Anterior
                     </Button>
-                )}
+                ) : <div> </div>}
 
-                {nextUrl && (
+                <img style={{ width: "120px" }} src="img/pokemon-logo.png" alt="Pokemon Logo" />
+
+                {nextUrl ? (
                     <Button onClick={() => { setPokedata([]); setUrl(nextUrl); }}>
                         Próximo
                     </Button>
-                )}
+                ) : <div> </div>}
             </NavBar>
 
             <Info pokemon={pokedex} />

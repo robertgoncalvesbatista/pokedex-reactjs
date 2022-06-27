@@ -1,7 +1,5 @@
-import { useState } from "react";
-
 import { Polygon, FlexBox } from "../../styles";
-import { TypeStyled, ScreenStyled, Cross, ScreenGreen, Frame } from "./styles";
+import { ScreenStyled, Cross, ScreenGreen, Frame } from "./styles";
 
 import { IPokemon } from "../../types";
 
@@ -12,8 +10,6 @@ const Info = (props: { pokemon: IPokemon | undefined }) => {
     props.pokemon?.types.map(iten => {
         arr.push(iten.type.name);
     })
-
-    console.log(arr)
 
     return (
         <Frame>
