@@ -1,6 +1,7 @@
 {
     "name": "poke-app",
     "private": true,
+    "homepage": "pokedex-reactjs/",
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
