@@ -89,9 +89,9 @@ const Info = (props: { pokemon: IPokemon | undefined }) => {
                 <FlexBox display="grid" alignment="center" css={{ border: "2px solid var(--color-red-terciary)", margin: "0.5rem", borderRadius: "0 14px 14px 0" }}>
                     <FlexBox css={{ margin: "1rem 2rem", width: "334px" }} >
                         <Polygon color="cinza" css={{ padding: "1rem", height: "50px", fontSize: "10px", display: "grid", gridTemplateColumns: "auto auto auto", alignItems: "center" }}>
-                            {props.pokemon?.stats.map(value => {
+                            {props.pokemon?.stats.map((value, index) => {
                                 return (
-                                    <span style={{ color: "var(--color-white-primary)" }}>
+                                    <span key={index} style={{ color: "var(--color-white-primary)" }}>
                                         {value.stat.name.toUpperCase()}: {value.base_stat}
                                     </span>
                                 )

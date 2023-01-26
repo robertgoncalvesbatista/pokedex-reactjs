@@ -9,6 +9,7 @@ import { FlexBox } from "../../styles";
 import { Wrapper, NavBar, Button } from "./styles";
 
 import { IPokemon, IPokemons } from "../../types";
+import { useFetch } from "../../hooks/useFetch";
 
 const Dashboard = () => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon");
@@ -76,8 +77,8 @@ const Dashboard = () => {
                 ) : (
                     pokedata.map((value: IPokemon, index) => {
                         return (
-                            <div onClick={() => setPokedex(value)}>
-                                <Card key={index} pokemon={value} />
+                            <div key={index} onClick={() => setPokedex(value)}>
+                                <Card pokemon={value} />
                             </div>
                         )
                     })
